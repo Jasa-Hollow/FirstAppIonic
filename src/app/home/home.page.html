@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+<ion-app>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+  </style>
+  
+  <ion-header [translucent]="true">
+    <ion-toolbar color="success">
+      <ion-buttons slot="secondary">
+        <!-- Ícono de persona -->
+        <ion-button>
+          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        </ion-button>
+        <!-- Ícono de búsqueda -->
+        <ion-button>
+          <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+        </ion-button>
+        <!-- Ícono de opciones -->
+        <ion-button>
+          <ion-icon slot="icon-only" name="ellipsis-horizontal-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title slot="primary">
+        Home
+      </ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  
+  <ion-content [fullscreen]="true">
+    <div id="container">
+      <strong id="subtitulo"> {{subtitle}} </strong>
+      <!-- Cambiar el tamaño del texto -->
+      <ion-button (click)="onTextSize()" color="warning"> Cambio de tamaño </ion-button>
+      
+      <p id="myStyle"> {{text}} </p>
+      <!-- Agregar nuevo texto texto -->
+      <ion-button (click)="onTextChange()" color="success"> Agregar texto </ion-button>
+    </div>
+  </ion-content>
+</ion-app>
